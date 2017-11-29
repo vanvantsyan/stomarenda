@@ -1,0 +1,42 @@
+.admin_images{
+    width:50px;
+    height:50px;
+    border-radius:10px;
+    margin:5px;
+}
+.have_checkbox{
+	margin:10px 11px !important;
+}
+.products_button{
+    float: right;
+    margin: 25px 0 0 0;
+}
+.head_title{
+    display:inline-block;
+    float: left;
+}
+.link_to_add{
+    display:inline-block;
+    margin: 23px;
+    float: left;
+}
+.image-delete{
+    color:red;
+    position:relative;
+    top:-16px;
+    left:-19px;
+}
+.delete_button{
+    float:right;
+}
+#select_input{
+    border-radius:10px;
+    width:auto !important;
+}
+#select_input option{
+    font-size:13px;
+}
+
+.admin_form_dates{
+    width:92% !important;
+}
