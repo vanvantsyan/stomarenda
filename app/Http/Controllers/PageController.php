@@ -26,7 +26,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-public function create_page()
+      public function pages()
+    {
+        $page = new Pages();
+        $pages = $page->all();
+        Session::put('active', 'pages');
+
+        return view('admin/pages', [
+            'layout_path' => 'public/adminlte',
+            'pages' => $pages
+        ]);
+    }
+    public function create_page()
      {
          return view('admin/create_page', [
              'layout_path' => 'public/adminlte',
