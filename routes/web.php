@@ -89,57 +89,57 @@ Route::group(['prefix' => 'admin'], function() {
     $this->get('/stats', 'HomeController@stats')->name('home');
 
 
-    $this->get('/orders', 'HomeController@orders');
-    $this->get('/edit_order/{id}', array('uses' => 'HomeController@edit_order', 'as' => 'edit.order'));
-    $this->post('/update_order', array('uses' => 'HomeController@update_order', 'as' => 'update.order'));
-    $this->get('/delete_order/{id}', array('uses' => 'HomeController@delete_order', 'as' => 'delete.order'));
+    $this->get('/orders', 'OrdersController@orders');
+    $this->get('/edit_order/{id}', array('uses' => 'OrdersController@edit_order', 'as' => 'edit.order'));
+    $this->post('/update_order', array('uses' => 'OrdersController@update_order', 'as' => 'update.order'));
+    $this->get('/delete_order/{id}', array('uses' => 'OrdersController@delete_order', 'as' => 'delete.order'));
     $this->post('/sendDocs', array('uses' => 'HomeController@sendDocs', 'as' => 'sendDocs'));
     $this->post('/sendRoboCheck', array('uses' => 'HomeController@sendRoboCheck', 'as' => 'sendRoboCheck'));
 
-    $this->get('/pages', 'HomeController@pages');
-    $this->get('/create_page', array('uses' => 'HomeController@create_page', 'as' => 'create.page'));
-    $this->post('/pages', array('uses' => 'HomeController@add_page', 'as' => 'add.page'));
-    $this->get('/edit_page/{id}', array('uses' => 'HomeController@edit_page', 'as' => 'edit.page'));
-    $this->post('/update_page', array('uses' => 'HomeController@update_page', 'as' => 'update.page'));
-    $this->get('/delete_page/{id}', array('uses' => 'HomeController@delete_page', 'as' => 'delete.page'));
+    $this->get('/pages', 'PagesController@pages');
+    $this->get('/create_page', array('uses' => 'PagesController@create_page', 'as' => 'create.page'));
+    $this->post('/pages', array('uses' => 'PagesController@add_page', 'as' => 'add.page'));
+    $this->get('/edit_page/{id}', array('uses' => 'PagesController@edit_page', 'as' => 'edit.page'));
+    $this->post('/update_page', array('uses' => 'PagesController@update_page', 'as' => 'update.page'));
+    $this->get('/delete_page/{id}', array('uses' => 'PagesController@delete_page', 'as' => 'delete.page'));
 
-    $this->get('/manufacturers', 'HomeController@manufacturers');
-    $this->get('/create_manufacturer', array('uses' => 'HomeController@create_manufacturer', 'as' => 'create.manufacturer'));
-    $this->post('/manufacturers', array('uses' => 'HomeController@add_manufacturer', 'as' => 'add.manufacturer'));
-    $this->get('/edit_manufacturer/{id}', array('uses' => 'HomeController@edit_manufacturer', 'as' => 'edit.manufacturer'));
-    $this->post('/update_manufacturer', array('uses' => 'HomeController@update_manufacturer', 'as' => 'update.manufacturer'));
-    $this->get('/delete_manufacturer/{id}', array('uses' => 'HomeController@delete_manufacturer', 'as' => 'delete.manufacturer'));
-
-
-    $this->get('/productGroups', 'HomeController@productGroups');
-    $this->get('/create_productGroup', array('uses' => 'HomeController@create_productGroup', 'as' => 'create.productGroup'));
-    $this->post('/productGroups', array('uses' => 'HomeController@add_productGroup', 'as' => 'add.productGroup'));
-    $this->get('/edit_productGroup/{id}', array('uses' => 'HomeController@edit_productGroup', 'as' => 'edit.productGroup'));
-    $this->post('/update_productGroup', array('uses' => 'HomeController@update_productGroup', 'as' => 'update.productGroup'));
-    $this->get('/delete_productGroup/{id}', array('uses' => 'HomeController@delete_productGroup', 'as' => 'delete.productGroup'));
+    $this->get('/manufacturers', 'ManufacturersController@manufacturers');
+    $this->get('/create_manufacturer', array('uses' => 'ManufacturersController@create_manufacturer', 'as' => 'create.manufacturer'));
+    $this->post('/manufacturers', array('uses' => 'ManufacturersController@add_manufacturer', 'as' => 'add.manufacturer'));
+    $this->get('/edit_manufacturer/{id}', array('uses' => 'ManufacturersController@edit_manufacturer', 'as' => 'edit.manufacturer'));
+    $this->post('/update_manufacturer', array('uses' => 'ManufacturersController@update_manufacturer', 'as' => 'update.manufacturer'));
+    $this->get('/delete_manufacturer/{id}', array('uses' => 'ManufacturersController@delete_manufacturer', 'as' => 'delete.manufacturer'));
 
 
-    $this->get('/products', 'HomeController@products');
-    $this->get('/create_product', array('uses' => 'HomeController@create_product', 'as' => 'create.product'));
-    $this->post('/products', array('uses' => 'HomeController@add_products', 'as' => 'add.products'));
-    $this->get('/edit_product/{id}', array('uses' => 'HomeController@edit_product', 'as' => 'edit.product'));
-    $this->post('/update_product', array('uses' => 'HomeController@update_product', 'as' => 'update.product'));
-    $this->get('/delete_product/{id}', array('uses' => 'HomeController@delete_product', 'as' => 'delete.product'));
+    $this->get('/productGroups', 'ProductGroupsController@productGroups');
+    $this->get('/create_productGroup', array('uses' => 'ProductGroupsController@create_productGroup', 'as' => 'create.productGroup'));
+    $this->post('/productGroups', array('uses' => 'ProductGroupsController@add_productGroup', 'as' => 'add.productGroup'));
+    $this->get('/edit_productGroup/{id}', array('uses' => 'ProductGroupsController@edit_productGroup', 'as' => 'edit.productGroup'));
+    $this->post('/update_productGroup', array('uses' => 'ProductGroupsController@update_productGroup', 'as' => 'update.productGroup'));
+    $this->get('/delete_productGroup/{id}', array('uses' => 'ProductGroupsController@delete_productGroup', 'as' => 'delete.productGroup'));
+
+
+    $this->get('/products', 'ProductsController@products');
+    $this->get('/create_product', array('uses' => 'ProductsController@create_product', 'as' => 'create.product'));
+    $this->post('/products', array('uses' => 'ProductsController@add_products', 'as' => 'add.products'));
+    $this->get('/edit_product/{id}', array('uses' => 'ProductsController@edit_product', 'as' => 'edit.product'));
+    $this->post('/update_product', array('uses' => 'ProductsController@update_product', 'as' => 'update.product'));
+    $this->get('/delete_product/{id}', array('uses' => 'ProductsController@delete_product', 'as' => 'delete.product'));
 
     $this->get('/delete_image/{id}/{path_name}', array('uses' => 'HomeController@delete_image', 'as' => 'delete.image'));
 
-    $this->get('/license_products', 'HomeController@license_products');
-    $this->get('/create_license_product', array('uses' => 'HomeController@create_licenseProducts', 'as' => 'create.licenseProducts'));
-    $this->post('/license_products', array('uses' => 'HomeController@add_licenseProducts', 'as' => 'license.products'));
-    $this->get('/edit_license_product/{id}', array('uses' => 'HomeController@edit_licenseProduct', 'as' => 'edit.licenseProduct'));
-    $this->post('/update_license_product', array('uses' => 'HomeController@update_licenseProduct', 'as' => 'update.licenseProduct'));
+    $this->get('/license_products', 'LicenseProductsController@license_products');
+    $this->get('/create_license_product', array('uses' => 'LicenseProductsController@create_licenseProducts', 'as' => 'create.licenseProducts'));
+    $this->post('/license_products', array('uses' => 'LicenseProductsController@add_licenseProducts', 'as' => 'license.products'));
+    $this->get('/edit_license_product/{id}', array('uses' => 'LicenseProductsController@edit_licenseProduct', 'as' => 'edit.licenseProduct'));
+    $this->post('/update_license_product', array('uses' => 'LicenseProductsController@update_licenseProduct', 'as' => 'update.licenseProduct'));
 
-    $this->get('/license_packages', 'HomeController@license_packages');
-    $this->get('/create_license_package', array('uses' => 'HomeController@create_licensePackages', 'as' => 'create.licensePackage'));
-    $this->post('/license_packages', array('uses' => 'HomeController@add_licensePackages', 'as' => 'license.packages'));
-    $this->get('/edit_license_package/{id}', array('uses' => 'HomeController@edit_licensePackage', 'as' => 'edit.licensePackage'));
-    $this->post('/update_license_package', array('uses' => 'HomeController@update_licensePackage', 'as' => 'update.licensePackage'));
-    $this->get('/delete_license_package/{id}', array('uses' => 'HomeController@delete_licensePackage', 'as' => 'delete.licensePackage'));
+    $this->get('/license_packages', 'LicensePackagesController@license_packages');
+    $this->get('/create_license_package', array('uses' => 'LicensePackagesController@create_licensePackages', 'as' => 'create.licensePackage'));
+    $this->post('/license_packages', array('uses' => 'LicensePackagesController@add_licensePackages', 'as' => 'license.packages'));
+    $this->get('/edit_license_package/{id}', array('uses' => 'LicensePackagesController@edit_licensePackage', 'as' => 'edit.licensePackage'));
+    $this->post('/update_license_package', array('uses' => 'LicensePackagesController@update_licensePackage', 'as' => 'update.licensePackage'));
+    $this->get('/delete_license_package/{id}', array('uses' => 'LicensePackagesController@delete_licensePackage', 'as' => 'delete.licensePackage'));
 
 
     $this->get('/call_queries', 'HomeController@call_queries');
@@ -151,12 +151,12 @@ Route::group(['prefix' => 'admin'], function() {
     $this->get('/delete_feedback/{id}', array('uses' => 'HomeController@delete_feedback', 'as' => 'delete.feedback'));
 
 
-    $this->get('/related_products', 'HomeController@related_products');
-    $this->get('/create_related_products', array('uses' => 'HomeController@create_relatedProduct', 'as' => 'create.relatedProduct'));
-    $this->post('/related_product', array('uses' => 'HomeController@add_relatedProduct', 'as' => 'add.relatedProduct'));
-    $this->get('/edit_related_product/{id}', array('uses' => 'HomeController@edit_relatedProduct', 'as' => 'edit.relatedProduct'));
-    $this->post('/update_related_product', array('uses' => 'HomeController@update_relatedProduct', 'as' => 'update.relatedProduct'));
-    $this->get('/delete_related_product/{id}', array('uses' => 'HomeController@delete_relatedProduct', 'as' => 'delete.relatedProduct'));
+    $this->get('/related_products', 'RelatedProductsController@related_products');
+    $this->get('/create_related_products', array('uses' => 'RelatedProductsController@create_relatedProduct', 'as' => 'create.relatedProduct'));
+    $this->post('/related_product', array('uses' => 'RelatedProductsController@add_relatedProduct', 'as' => 'add.relatedProduct'));
+    $this->get('/edit_related_product/{id}', array('uses' => 'RelatedProductsController@edit_relatedProduct', 'as' => 'edit.relatedProduct'));
+    $this->post('/update_related_product', array('uses' => 'RelatedProductsController@update_relatedProduct', 'as' => 'update.relatedProduct'));
+    $this->get('/delete_related_product/{id}', array('uses' => 'RelatedProductsController@delete_relatedProduct', 'as' => 'delete.relatedProduct'));
 
     $this->get('/error', 'HomeController@error');
 
