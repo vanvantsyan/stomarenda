@@ -9,7 +9,7 @@ use App\Orders;
 use Validator;
 use File;
 
-class HomeController extends Controller
+class OrdersController extends Controller
 {
     /**
      * Create a new controller instance.
